@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
 import App from './App';
+import reducer from './reducers'
+import { movies$ } from './data/movies'
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+movies$.then(res => { store.dispatch({ type: 'SET_MOVIES', movies: res })})
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
