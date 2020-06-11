@@ -8,7 +8,7 @@ const Movie = (props) => {
       <p className="card-cat">Category</p>
       <p className="card-text"> {props.category}</p>
 
-      <div className="container">
+      <div className="m-container">
         <LikeButton
           id={props.id}
           icon="fa-thumbs-up"
