@@ -1,11 +1,13 @@
-import { SET_CATEGORY, SET_MOVIES, LIKE, DISLIKE } from '../actions';
+import { SET_CATEGORY, SET_MOVIES, LIKE, DISLIKE, SET_ITEMS_PAGE, SET_CURRENT_PAGE } from '../actions';
 
 const initialState = {
   movies: [],
   selectedCat: [],
   categories: [],
   likes: [],
-  dislikes: []
+  dislikes: [],
+  itemsPerPage: 4,
+  currentPage: 0
 }
 
 const handleLikeVote = (state, action) => {
@@ -75,6 +77,10 @@ export default (state = initialState, action) => {
       return handleLikeVote(state, action)
     case DISLIKE:
       return handleDislikeVote(state, action)
+    case SET_ITEMS_PAGE:
+      return { ...state, itemsPerPage: action.itemsPerPage }
+    case SET_CURRENT_PAGE:
+      return { ...state, currentPage: action.currentPage }
     default:
       return state
   }
