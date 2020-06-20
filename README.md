@@ -1,5 +1,5 @@
 # Simple movie app _ React and Redux
-This app is developed for a technical test using React, Redux (in 10h)
+This app is developed for a technical test using React, Redux, consumption an api (in 10h)
 
 ![Screenshot1](https://user-images.githubusercontent.com/58567573/85020929-5d1fb000-b171-11ea-808b-e6ca2ae76855.png)
 * Multi selection filter
